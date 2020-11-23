@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GOVkiNO</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--тулбар проекта-->
+
+
+<script src="js/request.js">
+</script>
+<script src="js/all_game.js">
+</script>
+<script type="text/javascript">
+    user();
+</script>
+
+<div class="single">
+   <div class="single-image"> <script> game_poster() </script> </div>
+    <div class="single-annotation">
+        <p class="game-name"> <script type="text/javascript"> game_name(); </script> </p>
+        <p class="game-annotetion"> <script type="text/javascript"> game_annotation(); </script>  </p>
+        <p class="game-dop_info"> Платформа: <script type="text/javascript"> game_platform(); </script></p>
+        <p class="game-dop_info"> Жанр: <script type="text/javascript"> game_genre(); </script> </p>
+    </div>
+
+    <div class="user-comment">
+    <span> <textarea class="textarea-user" placeholder="Введите коментарий" name="" id="" cols="" rows=""></textarea>
+            <button type="submit" class="button-textarea"> Отправить </button>
+
+    </span>
+        <div>
+            <div class="row2">
+                <div class="column2">
+                    <script> game_screen(1) </script>
+                </div>
+                <div class="column2">
+                    <script> game_screen(2) </script>
+                </div>
+                <div class="column2">
+                    <script> game_screen(3) </script>
+                </div>
+            </div>
+
+            <!-- Модальный / Лайтбокс -->
+            <div id="myModal" class="modal_screenshots">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content-screenshoots">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 3</div>
+                        <script> game_screen_modal(1) </script>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 3</div>
+                        <script> game_screen_modal(2) </script>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 3</div>
+                        <script> game_screen_modal(3) </script>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comments">
+        <div class="single-comment">
+        <span class="nickname">
+        <span class="messedge"> Lorem ipsum. </span>
+        <span class="data"> 2020.01.01</span>
+            </span>
+            <p class="messedge"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda autem commodi consectetur consequatur cum dolorum ducimus ea eum facere fugit laboriosam maxime, quaerat quia quos velit vero. Fugiat, unde. </p>
+
+        </div>
+
+        <div class="single-comment">
+        <span class="nickname">
+        <span class="messedge"> Lorem ipsum. </span>
+        <span class="data"> 2020.01.01</span>
+            </span>
+            <p class="messedge"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda autem commodi consectetur consequatur cum dolorum ducimus ea eum facere fugit laboriosam maxime, quaerat quia quos velit vero. Fugiat, unde. </p>
+
+        </div>
+
+        <div class="single-comment">
+        <span class="nickname">
+        <span class="messedge"> Lorem ipsum. </span>
+        <span class="data"> 2020.01.01</span>
+            </span>
+            <p class="messedge"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda autem commodi consectetur consequatur cum dolorum ducimus ea eum facere fugit laboriosam maxime, quaerat quia quos velit vero. Fugiat, unde. </p>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    // Открыть модальном
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    // Закрыть модальное
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Вперед/назад контроль
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Элементы управления миниатюрами изображений
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+</script>
+
+</body>
+</html>
